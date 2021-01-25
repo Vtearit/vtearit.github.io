@@ -1,0 +1,248 @@
+
+/* ------------------------------ Responsive Media Styles ---------------------------- */
+
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+	
+}
+
+@media only screen and (min-width: 1200px) {
+	
+}
+
+/* Medium Device: 1200px */
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.banner-section .inner-banner {
+		img { width: 98%; }
+	}
+	.ts-section{
+        .ts__items{
+            .item{
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+	.header-top .inner-ht ul.inner-ht__infor li ul .text {
+		display: none;
+	}
+	.header-logo .inner-hl__right {
+		.input-group button {
+			top: 99px;
+		}
+		.input-group input {
+			padding: 0 100px 0 160px;
+		}
+	}
+	.header-nav .inner-hv__menu {
+		li a { padding: 15.5px 20px 14.5px; }
+	}
+	.banner-section .inner-banner {
+		img { width: 98%; }
+	}
+	.banner-section {
+		.inner-banner {
+			&__big--text {
+				top: 58.6%;
+				h4 {
+					padding: 0 0;
+					font-size: 24px;
+				}
+			}
+			&__small--text {
+				h4 {
+					font-size: 24px;
+				}
+			}
+		}
+	}
+	.ts-section{
+        .ts__items{
+            .item{
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+/* Tablet Device: 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.header-logo .inner-hl {
+		flex-direction: column;
+		align-items: center;
+		&__right {
+			.input-group button {
+				top: 152px;
+			}
+		}
+	}
+	.header-nav .inner-hv {
+		justify-content: center;
+		&__cate {
+			display: none;
+		}
+	}
+	.fact-section {
+		padding: 3% 0 0;
+		.inner-fact {
+			flex-wrap: wrap;
+			justify-content: space-around;
+			&__item {
+				width: 40%;
+				padding-bottom: 3%;
+			}
+		}
+	}
+	
+}
+
+/* Large Device: 480px */
+
+@media only screen and (max-width: 767px) {
+	.header-logo .inner-hl {
+		flex-direction: column;
+		align-items: center;
+		&__right {
+			.input-group {
+				input {
+					padding: 0px 45px 0 160px;
+				}
+				button {
+					top: 152px;
+				}
+			}
+		}
+	}
+	.header-nav .inner-hv {
+		justify-content: center;
+		margin-left: 0;
+		&__cate {
+			display: none;
+		}
+		&__menu {
+			li a { padding: 15.5px 15px 14.5px; }
+		}
+	}
+	.fact-section {
+		padding: 3% 0 0;
+		.inner-fact {
+			flex-wrap: wrap;
+			justify-content: space-around;
+			&__item {
+				width: 40%;
+				padding-bottom: 3%;
+			}
+		}
+	}
+	.banner-section .inner-banner {
+		flex-direction: column;
+		img { width: 100%; }
+		&__small__item img.bsf-img {
+			margin-bottom: 1.5%;
+		}
+	}
+	.ts-section{
+		.ts__head {
+			.inner-ts__head {
+				&__title {
+					span { display: none; }
+				}
+			}
+		}
+        .ts__items{
+            .item{
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* Small Device: 320px */
+
+@media only screen and (max-width: 479px) {
+	// Header Media
+	.header-logo .inner-hl {
+		&__right {
+			flex-direction: column;
+			.input-group {
+				select {
+					padding: 12px 0 12px 5px;
+					&::after { display: none;}
+				}
+				input {
+					padding: 0 50px 0 130px;
+				}
+				button {
+					top: 152px;
+				}
+			}
+			.nav-right {
+				margin-left: 25%;
+				justify-content: center;
+			}
+		}
+	}
+	.header-nav {
+		background: #fff;
+		.inner-hv {
+			display: block;
+			width: 90%;
+			&__menu { display: none; }
+		}
+	}
+	.slicknav {
+		&_menu {
+			display: block;
+			background: transparent;
+			text-align: center;
+			margin-top: -80px;
+			padding: 12px 0;
+			&txt {
+				color: #fff;
+			}
+		}
+		&_btn { margin-right: 25%;}
+		
+		&_nav {
+			background: @main-color;
+			margin-top: 12px;
+			margin-left: 10%;
+			li { 
+				border-bottom: dotted 1px #5f5f5f;
+				padding: 5px 0; 
+			}
+			a {
+				color: #fff;
+				&:hover {
+					color: #020202;
+				}
+			}
+		}
+		&_btn {
+			border-radius: 0;
+			background-color: @main-color;
+			display: inline-block;
+			// right: -16px;
+			color: #fff;
+			padding: 5px 10px;
+		}
+	}
+	.fact-section {
+		padding: 5% 0;
+		.inner-fact {
+			flex-wrap: wrap;
+			&__item {
+				width: 100%;
+				padding: 3% 0;
+			}
+		}
+	}
+	.banner-section .inner-banner__big--text {
+		top: 46.6%;
+		left: 10%;
+	}
+}
