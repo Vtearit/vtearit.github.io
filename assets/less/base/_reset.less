@@ -1,0 +1,49 @@
+.container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+ul {
+    padding: 0;
+    li{
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+.text-center { text-align: center; }
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: @main-color;
+    background: radial-gradient(circle, @main-color 41%, #0eb5d6ea 97%, #8f8f8f 100%);
+    border-radius: 10px;
+    &:hover {
+      border-radius: 10px;
+    }
+}

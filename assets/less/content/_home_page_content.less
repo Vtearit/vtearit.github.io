@@ -54,30 +54,20 @@
     } 
 }
 
-.hero-items .owl-item.active .single-hero-items span,
-.hero-items .owl-item.active .single-hero-items h1,
-.hero-items .owl-item.active .single-hero-items p,
-.hero-items .owl-item.active .single-hero-items .primary-btn {
-	top: 0;
-	opacity: 1;
-}
-
-.hero-items .owl-item.active .single-hero-items span {
-	-webkit-transition: all 0.2s ease 0.2s;
-	-o-transition: all 0.2s ease 0.2s;
-	transition: all 0.2s ease 0.2s;
-}
-
-.hero-items .owl-item.active .single-hero-items p {
-	-webkit-transition: all 0.6s ease 0.6s;
-	-o-transition: all 0.6s ease 0.6s;
-	transition: all 0.6s ease 0.6s;
-}
-
-.hero-items .owl-item.active .single-hero-items .primary-btn {
-	-webkit-transition: all 0.8s ease 0.8s;
-	-o-transition: all 0.8s ease 0.8s;
-	transition: all 0.8s ease 0.8s;
+.hero-items .owl-item.active .single-hero-items {
+    span, h1, p, .primary-btn {
+        top: 0;
+        opacity: 1;
+    }
+    span {
+        .slider-action (all 0.2s ease 0.2s);
+    }
+    p {
+        .slider-action (all 0.6s ease 0.6s);
+    }
+    .primary-btn {
+        .slider-action (all 0.8s ease 0.8s);
+    }
 }
 
 .hero-items .owl-nav button[type=button] {
@@ -90,9 +80,10 @@
     height: 60px;
     background-color: #fff;
 }
+
 .hero-items .owl-nav button:hover[type=button] {
     color: #fff;
-    background-color: #0ca8c9;
+    background-color: @main-color;
 }
 
 .hero-items .owl-nav button[type=button].owl-next {
@@ -415,7 +406,7 @@
                         color: #ababab;
                         padding-top: 3%;
                         a {
-                            color: #0ca8c9;
+                            color: @main-color;
                         }
                     }
                 }
@@ -447,7 +438,6 @@
         padding: 5.2% 0 3%;
 		&__text {
             width: 100%;
-			// padding: 100px 0px 56px;
 			&--big {
                 .text-value (32px, 26px, 600, -0.35px);
 				color: #fff;
@@ -455,7 +445,6 @@
 			&--small {
                 .text-value (14px, 30px, 500, 0.1px);
 				color: #fff;
-                // margin-top: 13px;
                 padding: 1.2% 0;
 				display: block;
 			}
@@ -464,7 +453,6 @@
             width: 100%;
             padding: 3.7% 0;
             position: relative;
-			// margin-bottom: 100px;
 			input {
 				height: 70px;
 				width: 67.5%;
@@ -484,12 +472,13 @@
 				position: absolute;
 				text-transform: uppercase;
 				height: 58px;
-				border: #0ca8c9;
+				border: @main-color;
 				border-radius: 29px;
                 background-color: @main-color;
                 font-family: 'Poppins';
 				width: 14.5%;
-                top: 31%;
+                top: 50%;
+                transform: translateY(-50%);
                 right: 17%;
 			}
 		}
@@ -571,7 +560,7 @@
 				}
 			}
 			i {
-				color: #20acca;;
+				color: @main-color;;
 			}
 			span {
 				font-size: 14px;
@@ -584,9 +573,10 @@
 				padding-right: 100px;
 			}
 			a:hover {
-				color: #0ca8c9;
+				color: @main-color;
 			  }
-		}
+        }
+        
 		.footer-social {
 			padding-top: 25px;
 			font-size: 14px;
@@ -598,10 +588,11 @@
 				top: -55px;
 			}
 			a:hover {
-				color: #0ca8c9;
+				color: @main-color;
 			}
 		}
-	}
+    }
+    
 	.footer-widget {
         margin-bottom: 30px;
         width: 25%;
@@ -625,15 +616,17 @@
 				font-weight: 500;
 			}
 			a:hover {
-				color: #0ca8c9;
+				color: @main-color;
 			}
 		}
     }
+    
     .special-footer {
         width: 16.6666%;
         .footer-widget {width: 100%;}
     }
-	.copyright-reserved {
+    
+    .copyright-reserved {
 		background-color: #fff;
 		padding: 10px 0;
         margin-top: -14px;
@@ -648,14 +641,11 @@
                 color: #8f8f8f;
                 padding: 4px 0px;
               a {
-                color: #0ca8c9;
+                color: @main-color;
               }
               a:hover {
                 color: #e7ab3c;
               }
-            }
-            .payment-pic {
-                float: right;
             }
         }
     }

@@ -1,5 +1,3 @@
-'use strict';
-
 (function ($) {
 
     /*------------------
@@ -44,35 +42,6 @@
     });
 
     /*------------------
-        Product Slider
-    --------------------*/
-   $(".product-slider").owlCarousel({
-        loop: true,
-        margin: 25,
-        nav: true,
-        items: 4,
-        dots: true,
-        navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            576: {
-                items: 2,
-            },
-            992: {
-                items: 2,
-            },
-            1200: {
-                items: 3,
-            }
-        }
-    });
-
-    /*------------------
        Brand Carousel
     --------------------*/
     $(".logo-carousel").owlCarousel({
@@ -95,51 +64,39 @@
             }
         }
     });
-
-    /*-----------------------
-       Product Single Slider
-    -------------------------*/
-    $(".ps-slider").owlCarousel({
-        loop: false,
-        margin: 10,
-        nav: true,
-        items: 3,
-        dots: false,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-    });
-    
     /*------------------
         CountDown
     --------------------*/
-    // For demo preview
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-
-    if(mm == 12) {
-        mm = '01';
-        yyyy = yyyy + 1;
-    } else {
-        mm = parseInt(mm) + 1;
-        mm = String(mm).padStart(2, '0');
-    }
-    var timerdate = mm + '/' + dd + '/' + yyyy;
-    // For demo preview end
-
-    console.log(timerdate);
+    var end = new Date('12/31/2021 00:00 AM');
     
-
-    // Use this for real timer date
-    /* var timerdate = "2020/01/01"; */
-
-	$("#countdown").countdown(timerdate, function(event) {
-        $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
-    });
-
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+    
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+    
+                clearInterval(timer);
+                document.getElementById('countdown').innerHTML = 'EXPIRED!';
+    
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+    
+            document.getElementById('countdown').innerHTML = '<div class="cd-item"><span>' + days + '</span>' + '<span>Days</spans></div>' ;
+            document.getElementById('countdown').innerHTML += '<div class="cd-item"><span>' + hours + '</span>' + '<span>Hrs</spans></div>' ;
+            document.getElementById('countdown').innerHTML +=  '<div class="cd-item"><span>' + minutes + '</span>' + '<span>Mins</spans></div>';
+            document.getElementById('countdown').innerHTML +=  '<div class="cd-item"><span>' + seconds + '</span>' + '<span>Sec</spans></div>';
+        }
+    
+        timer = setInterval(showRemaining, 1000);
         
     /*----------------------------------------------------
      Language Flag js 
@@ -166,76 +123,5 @@
     $(".language_drop").msDropdown({roundedBorder:false});
         $("#tech").data("dd");
     });
-    /*-------------------
-		Range Slider
-	--------------------- */
-	var rangeSlider = $(".price-range"),
-		minamount = $("#minamount"),
-		maxamount = $("#maxamount"),
-		minPrice = rangeSlider.data('min'),
-		maxPrice = rangeSlider.data('max');
-	    rangeSlider.slider({
-		range: true,
-		min: minPrice,
-        max: maxPrice,
-		values: [minPrice, maxPrice],
-		slide: function (event, ui) {
-			minamount.val('$' + ui.values[0]);
-			maxamount.val('$' + ui.values[1]);
-		}
-	});
-	minamount.val('$' + rangeSlider.slider("values", 0));
-    maxamount.val('$' + rangeSlider.slider("values", 1));
-
-    /*-------------------
-		Radio Btn
-	--------------------- */
-    $(".fw-size-choose .sc-item label, .pd-size-choose .sc-item label").on('click', function () {
-        $(".fw-size-choose .sc-item label, .pd-size-choose .sc-item label").removeClass('active');
-        $(this).addClass('active');
-    });
-    
-    /*-------------------
-		Nice Select
-    --------------------- */
-    $('.sorting, .p-show').niceSelect();
-
-    /*------------------
-		Single Product
-	--------------------*/
-	$('.product-thumbs-track .pt').on('click', function(){
-		$('.product-thumbs-track .pt').removeClass('active');
-		$(this).addClass('active');
-		var imgurl = $(this).data('imgbigurl');
-		var bigImg = $('.product-big-img').attr('src');
-		if(imgurl != bigImg) {
-			$('.product-big-img').attr({src: imgurl});
-			$('.zoomImg').attr({src: imgurl});
-		}
-	});
-
-    $('.product-pic-zoom').zoom();
-    
-    /*-------------------
-		Quantity change
-	--------------------- */
-    var proQty = $('.pro-qty');
-	proQty.prepend('<span class="dec qtybtn">-</span>');
-	proQty.append('<span class="inc qtybtn">+</span>');
-	proQty.on('click', '.qtybtn', function () {
-		var $button = $(this);
-		var oldValue = $button.parent().find('input').val();
-		if ($button.hasClass('inc')) {
-			var newVal = parseFloat(oldValue) + 1;
-		} else {
-			// Don't allow decrementing below zero
-			if (oldValue > 0) {
-				var newVal = parseFloat(oldValue) - 1;
-			} else {
-				newVal = 0;
-			}
-		}
-		$button.parent().find('input').val(newVal);
-	});
 
 })(jQuery);

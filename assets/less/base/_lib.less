@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+// Color Argument
+
+@main-color: #0ca8c9;
+@bgcolor: #000;
+
+@text-color: #525252;
+@number : #999999;
+@hr : #ededed;
+
+
+
 html,
 body {
 	max-width: 1920px;
@@ -9,16 +21,13 @@ body {
     padding: 0;
     border: 0;
 }
+
 * {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	margin: 0;
- }
-
-// img {
-// 	max-width: 100%;
-// }
+}
 
 input:focus, select:focus, button:focus, textarea:focus {
 	outline: none;
@@ -27,31 +36,34 @@ input:focus, select:focus, button:focus, textarea:focus {
 a:hover, a:focus {
 	text-decoration: none;
 	outline: none;
+
 }
-.text-value (@font-size, @line-height, @font-weight, @letter-spacing) {
-    font-size: @font-size;
-    line-height: @line-height;
-    font-weight: @font-weight;
-    letter-spacing: @letter-spacing;	    	
+.text-value (@_font-size : @font-size, @_line-height : @line-height, @_font-weight : @font-weight, @_letter-spacing : @letter-spacing) {
+    font-size: @_font-size;
+    line-height: @_line-height;
+    font-weight: @_font-weight;
+    letter-spacing: @_letter-spacing;	    	
+
 }
-.text-center { text-align: center; }
+.slider-action (@_value : @value)
+{
+    -webkit-transition: @_value;
+    -o-transition: @_value;
+    transition: @_value;
+}
+
 ul,
 ol {
 	padding: 0;
 	margin: 0;
 }
+
 h4 {
     .text-value (30px, 30px, 600, 0.3px);
 	text-transform: uppercase;
-	// margin: 0;
 }
+
 h5 {
     .text-value (17px, 30px, 500, 0.15px);
 }
 
-
-@main-color: #0ca8c9;
-@bgcolor: #000;
-@text-color: #525252;
-@number : #999999;
-@hr : #ededed;
