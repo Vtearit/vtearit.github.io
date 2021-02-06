@@ -6,7 +6,7 @@
 }
 .header-top {
     background-color:#222;
-    padding: 20px 0 16px 0;
+    padding: 20px 0 18px 0;
     .inner-ht {
         display: flex;
         justify-content: space-between;
@@ -39,7 +39,7 @@
                         flex-direction: column;
                         padding: 0 10px;
                         span {
-                            .text-value (12px, 18px, 500, 0);
+                            .text-value (12px, 16px, 500, 0);
                             display: block;
                             color: #bababa;
                         }
@@ -64,11 +64,14 @@
                 cursor: pointer;
                 padding: 0 20px;
                 .ddTitle {
+                    position: relative;
                     .ddTitleText {
                         img {
                             padding-right: 5px;
                         }
                         span {
+                            position: relative;
+                            top: -2px;
                             font-size: 13px;
                             margin-left: 4px;
                             color: #bababa;
@@ -218,6 +221,7 @@
         justify-content: space-between;
         width: 100%;
         margin-left: 15px;
+        position: relative;
         &__cate {
             background: #0ca8c9;
             color: #fff;
@@ -232,7 +236,8 @@
             span {
                 .text-value (14px, 29px, 600, 0);
                 color: #fff;
-                // padding: 0px 12px;
+                position: relative;
+                top: -1px;
             }
             .cate-hover {
                 position: absolute;

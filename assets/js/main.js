@@ -27,43 +27,66 @@
     /*------------------
         Slider
     --------------------*/
-    $(".hero-items").owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        items: 1,
-        dots: false,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-    });
+    var slides=document.querySelector('.inner-slider').children;
+    var nextSlide=document.querySelector(".right-slide");
+    var prevSlide=document.querySelector(".left-slide");
+    var totalSlides=slides.length;
+    var index=0;
+
+    nextSlide.onclick=function () {
+        next("next");
+    }
+    prevSlide.onclick=function () {
+        next("prev");
+    }
+
+    function next(direction){
+
+    if(direction=="next"){
+        index++;
+        if(index==totalSlides){
+            index=0;
+        }
+    } 
+    else{
+            if(index==0){
+                index=totalSlides-1;
+            }
+            else{
+                index--;
+            }
+        }
+
+    for(i=0;i<slides.length;i++){
+            slides[i].classList.remove("active");
+    }
+    slides[index].classList.add("active");     
+
+    }
 
     /*------------------
        Brand Carousel
     --------------------*/
-    $(".logo-carousel").owlCarousel({
-        loop: false,
-        margin: 30,
-        nav: false,
-        items: 5,
-        dots: false,
-        navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-        smartSpeed: 1200,
-        autoHeight: false,
-        mouseDrag: false,
-        autoplay: true,
-        responsive: {
-            0: {
-                items: 3,
-            },
-            768: {
-                items: 5,
-            }
-        }
-    });
+    // $(".logo-carousel").owlCarousel({
+    //     loop: false,
+    //     margin: 30,
+    //     nav: false,
+    //     items: 5,
+    //     dots: false,
+    //     navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
+    //     smartSpeed: 1200,
+    //     autoHeight: false,
+    //     mouseDrag: false,
+    //     autoplay: true,
+    //     responsive: {
+    //         0: {
+    //             items: 3,
+    //         },
+    //         768: {
+    //             items: 5,
+    //         }
+    //     }
+    // });
     /*------------------
         CountDown
     --------------------*/

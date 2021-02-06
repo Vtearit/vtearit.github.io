@@ -1,94 +1,110 @@
 // Slider Section
-.hero-items {
-    .single-hero-items {
-        height: 750px;
-        padding-top: 210px;
-        // position: relative;
-        .slider-text {
-            width: 65%;
-            // padding: 0 2%;
-            span.text {
-                display: block;
-                margin-bottom: -2px;
-                font-size: 69px;
-                font-weight: 600;
-                position: relative;
-                top: -9px !important;
-                left: -1px !important;
-                span.first-line {
-                    position: relative;
-                    top: 10px;
-                    left: 0px;
-                    letter-spacing: 0.5px;
-                    span.mid-text {
-                        color: #0ca8c9;
-                        position: relative;
-                        left: 4px;
-                        letter-spacing: 1px;
+.slider{
+	max-width: 100%;
+	position: relative;
+	overflow: hidden;
+    .right-slide, .left-slide {
+        display: flex;
+        position: absolute;
+        top: 46%;
+        cursor: pointer;
+        height: 0;
+        width: 60px;
+        i {
+            .text-value (20px, 20px, bold, 0);
+            color: #082b4f;
+            text-align: center;
+        }
+    }
+
+    .left-slide{
+        left: 1%;
+        border-top: 60px solid #fff;
+        border-right: 10px solid transparent;
+        i {
+            margin: -82% auto;
+        }
+        &:hover {
+            border-top: 60px solid @main-color;
+            i { color: #fff; }
+        }
+    }
+
+    .right-slide{
+        right: 1%;
+        border-bottom: 60px solid #fff;
+        border-left: 10px solid transparent;
+        i {
+            margin: 40% auto;
+        }
+        &:hover{
+            // box-shadow: 0px 0px 10px #8f8f8f;
+            border-bottom: 60px solid @main-color;
+            i { color: #fff; }
+        }
+    }
+
+    .inner-slider {
+        &__item{
+            display: none;
+            position: relative;
+            .caption{
+                position: absolute;
+                top: 28.75%;
+                width: 100%;
+                .inner-caption {
+                    width: 60%;
+                    &__big-text {
+                        display: flex;
+                        flex-direction: column;
+                        .text-value(70px, 91px, 500, 0.25px);
+                        .special-text {
+                            margin-left: 0.5%;
+                            letter-spacing: 1px;
+                            color: @main-color;
+                        }
+                    }
+                    &__small-text {
+                        .text-value(16px, 33px, 600, 0);
+                        padding-top: 1.8%;
+                        p {
+                            font-size: 18px;
+                            letter-spacing: -0.05px;
+                            color: #8f8f8f;
+                        }
+                        .btn-shop {
+                            color: #000;
+                            letter-spacing: 0.1px;
+                            width: 12%;
+                            margin-top: 5.7%;
+                            display: block;
+                            border-bottom: 2px solid @main-color;
+                            &:hover {
+                                color: @main-color;
+                                border-bottom: 2px solid #8f8f8f;
+                            }
+                        }
                     }
                 }
-                span.second-line {
-                    position: relative;
-                    top: -3px;
-                    left: -1px;
-                    letter-spacing: 1px;
-                }
-            }
-            p {
-                margin-bottom: 47px;
-                position: relative;
-                font-size: 18px;
-                font-weight: 500;
-                left: -0.5px;
-                top: 100px;
-                color: #8f8f8f;
-                letter-spacing: 0.1px;
-            }
-            .primary-btn {
-                font-weight: 700;
-                color: #000;
-                border-bottom: #0ca8c9 solid 2px;
-                padding-bottom: 4px;
             }
         }
-    } 
-}
-
-.hero-items .owl-item.active .single-hero-items {
-    span, h1, p, .primary-btn {
-        top: 0;
-        opacity: 1;
+        &__item.active{
+            display: block;
+        }
     }
-    span {
-        .slider-action (all 0.2s ease 0.2s);
-    }
-    p {
-        .slider-action (all 0.6s ease 0.6s);
-    }
-    .primary-btn {
-        .slider-action (all 0.8s ease 0.8s);
-    }
-}
 
-.hero-items .owl-nav button[type=button] {
-	font-size: 18px;
-	position: absolute;
-	left: 20px;
-    top: 46%;
-    color: #082b4f;
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-}
-
-.hero-items .owl-nav button:hover[type=button] {
-    color: #fff;
-    background-color: @main-color;
-}
-
-.hero-items .owl-nav button[type=button].owl-next {
-	left: auto;
-	right: 18px;
+    .inner-slider {
+        &__item img{
+            max-width: 100%;
+            display: block;
+            animation:zoom 1s ease;
+        }
+    }
+    @keyframes zoom{
+        0%{transform: scale(2);opacity: 0}
+        50%{transform: scale(2);}
+        100%{transform: scale(1);opacity:1}
+    }
 }
 
 // Fact Section
@@ -97,21 +113,14 @@
     .inner-fact {
         display: flex;
         justify-content: space-between;
-        
         &__item {
             display: flex;
-            // padding: 63px 0 52px;
             width: 23%;
-            // position: relative;
-            // left: 15px;
+            position: relative;
             &--icon {
                 padding-right: 19px;
-                // float: left;
-                // margin-right: 20px;
             }
             &--text {
-                // position: relative;
-                // top: -6px;
                 display: flex;
                 flex-direction: column;
                 span {
@@ -133,6 +142,16 @@
     justify-content: space-between;
     &__big {
         position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        // img {
+        //     transition: all 0.5s;
+        //     overflow: hidden;
+        //     &:hover {
+        //         overflow: hidden;
+        //         transform: scale(1.1);
+        //     }
+        // }
         &--text {
             display: flex;
             flex-direction: column;
@@ -185,20 +204,31 @@
     &__small {
 		display: flex;
 		flex-direction: column;
+        overflow: hidden;
+        cursor: pointer;
+        img {
+            transition: all 0.5s;
+            overflow: hidden;
+            &:hover {
+                overflow: hidden;
+                transform: scale(1.1);
+            }
+        }
         &__item {
             display: flex;
             justify-content: flex-end;
             position: relative;
-			img.bsf-img {
+			.bsf-img {
 				margin-bottom: 6.7%;
 			}
-			img.bsl-img {
+			.bsl-img {
 				margin-bottom: 0;
 			}
 			&--text-1 {
 				position: absolute;
                 left: 6.2%;
                 top: 23%;
+                z-index: 1;
 				span {
                     .text-value (24px, 0, 500, 0.2px);
 					text-transform: uppercase;
@@ -208,7 +238,6 @@
 					color: @main-color;
 				}
 				h5 {
-					// margin-top: -1px;
 					letter-spacing: 0.35px;
 				}
 			}
@@ -216,6 +245,7 @@
 				position: absolute;
                 left: 6.3%;
                 top: 37%;
+                z-index: 1;
                 h4 { padding-bottom: 2px; }
 				h5 {
 					// margin-top: -5px;
@@ -231,9 +261,8 @@
 
 // Top Selling Secion
 .ts-section {
-    margin-bottom: 8px;
     .ts__head {
-        padding: 39px 0;
+        padding: 2% 0 2.5%;
         .inner-ts__head {
             display: flex;
             justify-content: space-between;
@@ -270,15 +299,10 @@
     .ts__items {
         .item{
             width: 25%;
-            padding: 21px 15px 18px;
-            margin-top: -42px;
+            padding: 0 15px 3.1%;
             box-sizing: border-box;
+            // cursor: pointer;
             &-inner{
-                position: relative;
-                overflow: hidden;
-                margin-top: 29px;
-                margin-bottom: 9px;
-                border: 1px solid #fff;
                 .item {
                     &__image{
                         overflow: hidden;
@@ -290,37 +314,8 @@
                             transition: all 0.5s;
                         }
                     }
-                    &__cart{
-                        z-index: 10;
-                        transition: all 0.5s;
-                        position: absolute;
-                        opacity: 0;
-                        ul{
-                            li{
-                                margin-bottom: 15px;
-                                a{
-                                    color: #777;
-                                    
-                                    &:hover{
-                                        color: #fff;
-                                    }
-                                }
-                                i{
-                                    transition: all 0.3s;
-                                    padding: 8px 8px 8px 8px;
-                                    border: 1px solid #ddd;
-                                    border-radius: 5px 0;
-                                    &:hover{
-                                    background-color: @main-color;
-                                    transform: scale(1.5);
-                                    }
-                                }
-                                
-                            }
-                        }
-                    }
                     &__text{
-                        padding: 5% 10%;
+                        padding: 5.2% 12% 5%;
                         &__title{
                             .text-value (14px, 22px, 700, 0.15px);
                             color: #000;
@@ -338,10 +333,6 @@
                 }
                 &:hover {
                     overflow: hidden;
-                    .item__cart {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
                     img {
                         transform: scale(1.2);
                     }

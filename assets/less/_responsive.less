@@ -11,16 +11,42 @@
 
 /* Medium Device: 1200px */
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (max-width: 1199px) {
+	.slider {
+		.inner-slider__item {
+			.caption {
+				padding-left: 10%;
+				.inner-caption {
+					width: 70%;
+					&__big-text {
+						font-size: 60px;
+						line-height: 60px;
+					}
+					&__small-text {
+						font-size: 13px;
+						p { font-size: 16px; }
+						.btn-shop {
+							margin-top: 0;
+						}
+					}
+				}
+			}
+		}
+	} 
+
 	.banner-section .inner-banner {
 		img { width: 98%; }
 	}
+
 	.ts-section{
-        .ts__items{
-            .item{
-                width: 50%;
-            }
-        }
+		.ts__items{
+			.row {
+				justify-content: center;
+			}
+			.item{
+				width: 35%;
+			}
+		} 
     }
 }
 
@@ -28,6 +54,7 @@
 	.header-top .inner-ht ul.inner-ht__infor li ul .text {
 		display: none;
 	}
+
 	.header-logo .inner-hl__right {
 		.input-group button {
 			top: 99px;
@@ -36,12 +63,33 @@
 			padding: 0 100px 0 160px;
 		}
 	}
+
 	.header-nav .inner-hv__menu {
 		li a { padding: 15.5px 20px 14.5px; }
 	}
+
+	.slider {
+		.inner-slider__item {
+			.caption {
+				.inner-caption {
+					width: 80%;
+					&__big-text {
+						font-size: 50px;
+						line-height: 50px;
+					}
+					&__small-text {
+						font-size: 12px;
+						p { font-size: 14px; }
+					}
+				}
+			}
+		}
+	} 
+
 	.banner-section .inner-banner {
 		img { width: 98%; }
 	}
+
 	.banner-section {
 		.inner-banner {
 			&__big--text {
@@ -58,13 +106,15 @@
 			}
 		}
 	}
+
 	.ts-section{
         .ts__items{
             .item{
-                width: 50%;
+                width: 40%;
             }
         }
     }
+
 }
 
 
@@ -80,12 +130,14 @@
 			}
 		}
 	}
+
 	.header-nav .inner-hv {
 		justify-content: center;
 		&__cate {
 			display: none;
 		}
 	}
+
 	.fact-section {
 		padding: 3% 0 0;
 		.inner-fact {
@@ -127,17 +179,75 @@
 			li a { padding: 15.5px 15px 14.5px; }
 		}
 	}
+
+	.slider {
+		.inner-slider {
+			&__item {
+				.caption {
+					padding-left: 5%;
+    				top: 20.75%;
+					.inner-caption {
+						&__big-text {
+							font-size: 35px;
+							line-height: 35px;
+						}
+						&__small-text {
+							.btn-shop {
+								width: 80%;
+								border: none;
+								&:hover {
+									border: none;
+									transform: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.left-slide {
+			border-top: 40px solid #fff; 
+			&:hover {
+				border-top: 40px solid @main-color;
+				i { color: #fff; }
+			}
+		}
+		.right-slide, .left-slide {
+			width: 40px;
+		}
+		.left-slide {
+			i { margin: -100% auto; }
+		}
+		.right-slide i, .slider .left-slide i {
+			font-size: 16px;
+		}
+		.right-slide {
+			border-bottom: 40px solid #fff;
+		}
+		.right-slide 
+		{
+			i { margin: 30% auto; }
+			&:hover {
+				border-bottom: 40px solid @main-color;
+			}
+		}
+	}
+
 	.fact-section {
 		padding: 3% 0 0;
 		.inner-fact {
 			flex-wrap: wrap;
 			justify-content: space-around;
 			&__item {
-				width: 40%;
+				width: 46%;
 				padding-bottom: 3%;
+				&--text span:last-child {
+					display: none;
+				}
 			}
 		}
 	}
+
 	.banner-section .inner-banner {
 		flex-direction: column;
 		img { width: 100%; }
@@ -145,17 +255,35 @@
 			margin-bottom: 1.5%;
 		}
 	}
+
 	.ts-section{
 		.ts__head {
 			.inner-ts__head {
 				&__title {
+					width: 80%;
 					span { display: none; }
 				}
 			}
 		}
-        .ts__items{
-            .item{
-                width: 100%;
+
+		.ts__items {
+            .item {
+                width: 50%;
+				padding: 10px 15px 10px;
+				&-inner {
+					.item {
+						&__image {
+							height: 215px;
+							img { 
+								width: 70%;
+								height: auto;
+							}
+						}
+						&__text {
+							font-size: 13px;
+						}
+					}
+				}
             }
         }
     }
@@ -231,13 +359,39 @@
 			padding: 5px 10px;
 		}
 	}
+
+	.slider {
+		border-top: 1px solid #0ca8c9;
+		border-bottom: 1px solid #0ca8c9;
+		box-shadow: 0 0 20px #0ca8c9;
+		 .inner-slider {
+			&__item {
+				.caption {
+					padding-left: 7%;
+					.inner-caption {
+						&__small-text {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+	}
 	.fact-section {
 		padding: 5% 0;
 		.inner-fact {
-			flex-wrap: wrap;
+			flex-wrap: nowrap;
+			flex-direction: row;
 			&__item {
-				width: 100%;
-				padding: 3% 0;
+				width: 25%;
+				justify-content: center;
+				&--icon {
+					padding-right: 0;
+				}
+				&--text {
+					display: none;
+				}
 			}
 		}
 	}
@@ -245,4 +399,12 @@
 		top: 46.6%;
 		left: 10%;
 	}
+
+	.ts-section{
+        .ts__items{
+            .item{
+                width: 100%;
+            }
+        }
+    }
 }
