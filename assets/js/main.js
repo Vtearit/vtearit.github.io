@@ -65,6 +65,47 @@
     }
 
     /*------------------
+       Top Selling
+    --------------------*/
+
+    var items=document.querySelector('.ts__items').children;
+    var nextItems=document.querySelector(".ts-right");
+    var prevItems=document.querySelector(".ts-left");
+    var totalItems=items.length;
+    var ind=0;
+
+    nextItems.onclick=function () {
+        action("next");
+    }
+    prevItems.onclick=function () {
+        action("prev");
+    }
+
+    function action(direction){
+
+    if(direction=="next"){
+        ind++;
+        if(ind==totalItems){
+            ind=0;
+        }
+    } 
+    else{
+            if(ind==0){
+                ind=totalItems-1;
+            }
+            else{
+                ind--;
+            }
+        }
+
+    for(i=0;i<items.length;i++){
+        items[i].classList.remove("active");
+    }
+    items[ind].classList.add("active");     
+
+    }
+
+    /*------------------
        Brand Carousel
     --------------------*/
     // $(".logo-carousel").owlCarousel({

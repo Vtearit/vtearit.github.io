@@ -2,10 +2,10 @@
 .flag-text {
     .text-value (12px, 13px, 500, 0);
     height: 12px;
-    color: #bababa;
+    color: @grey-text;
 }
 .header-top {
-    background-color:#222;
+    background-color:@top-bg;
     padding: 20px 0 18px 0;
     .inner-ht {
         display: flex;
@@ -23,8 +23,7 @@
                     .icon {
                         width: 32px;
                         height: 32px;
-                        background-color: rgba(8,43,79,0);
-                        border: 1px solid #0ca8c9;
+                        border: 1px solid @main-color;
                         padding: 8px 6px;
                         i {
                             .text-value (16px, 13px, 0, 0);
@@ -41,11 +40,14 @@
                         span {
                             .text-value (12px, 16px, 500, 0);
                             display: block;
-                            color: #bababa;
+                            color: @grey-text;
                         }
                         span:last-child {
-                            color: #fff;
+                            color: @white;
                         }
+                    }
+                    &:hover {
+                        .icon { .hover-action(1.1); }
                     }
                 }
             }
@@ -74,14 +76,14 @@
                             top: -2px;
                             font-size: 13px;
                             margin-left: 4px;
-                            color: #bababa;
+                            color: @grey-text;
                         }
                     }
                     .ddArrow:before {
                         content: "3";
                         font-family: "ElegantIcons";
                         font-size: 13px;
-                        color: #636363;
+                        color: @grey-black;
                         float: right;
                         position: relative;
                         right: -10px;
@@ -89,7 +91,7 @@
                     }
                 }
                 .ddChild {
-                    background: #333;
+                    background: @top-bg + #111;
                     max-width: 142px;
                     width: 100%;
                     top: 50px !important;
@@ -122,7 +124,7 @@
 
 // Header Logo Secion
 .header-logo {
-    background-color: #fff;
+    background-color: @white;
     padding: 26px 0 15px;
     .inner-hl {
         display: flex;
@@ -131,19 +133,20 @@
             display: flex;
             .input-group {
                 padding: 3px 0px;
+                position: relative;
                 .category-select {
                     .text-value (12px, 24px, 600, 0.41px);
                     background: transparent;
                     z-index: 99;
                     border: none;
                     position: absolute;
-                    color: #8f8f8f;
+                    color: @grey-black;
                     padding: 12px 0 12px 18px;
                     &:before {
                         position: absolute;
                         width: 1px;
                         height: 23px;
-                        background: #e0e0e0;
+                        background: @grey-text;
                         content: "";
                     }
                     &:after {
@@ -151,7 +154,7 @@
                         content: "3";
                         font-family: "ElegantIcons";
                         font-size: 16px;
-                        color: #8f8f8f;
+                        color: @grey-black;
                     }
                 }
                 input {
@@ -159,22 +162,25 @@
                     padding: 0 215px 0 175px;
                     height: 40px;
                     border-radius: 20px;
-                    background-color: #ffffff;
-                    border: 1px solid #ebebeb;
-                    color: #8f8f8f;
-                    // font-family: 'Poppins';
+                    background-color: @white;
+                    border: 1px solid @grey-white;
+                    color: @grey-black;
                 }
                 button {
                     font-size: 16px;
-                    color: #ffffff;
+                    top: 6%;
+                    right: 0;
+                    height: 68%;
+                    color: @white;
                     position: absolute;
-                    margin-left: -57px;
                     border: none;
                     border-radius: 0 20px 20px 0;
-                    background-color: #20acca;
+                    background-color: @main-color;
                     padding: 8px 25px 8px 17px;
                     cursor: pointer;
-                    height: 40px;
+                    i {
+                        font-weight: 600;
+                    }
                 }
             }
             .nav-right {
@@ -186,7 +192,7 @@
                         i {
                             font-size: 26px;
                             line-height: 24px;
-                            color: #0ca8c9;
+                            color: @main-color;
                             text-align: center;
                         }
                         .size {
@@ -196,16 +202,27 @@
                             border-radius: 8px;
                             top: -35px;
                             right: -18px;
-                            background-color: #222222;
+                            background-color: @top-bg;
                             span {
                                 font-size: 11px;
                                 display: block;
                                 padding: 0 5px;
                                 font-weight: 500;
-                                color: #fff;
+                                color: @white;
                             }
                         }
                     }
+                }
+                li:first-child:hover {
+                    i{
+                        animation: xoayvong 0.5s linear 0s infinite;
+                        -webkit-animation: xoayvong 0.5s linear 0s infinite;
+                        -moz-animation: xoayvong 0.5s linear 0s infinite;
+                        -o-animation: xoayvong 0.5s linear 0s infinite;
+                    }
+                }
+                li:last-child:hover {
+                    .hover-action(1.1);
                 }
             }
         }
@@ -215,7 +232,7 @@
 // Header Navbar Section
 
 .header-nav {
-	background: #0ca8c9;
+	background: @main-color;
     .inner-hv {
         display: flex;
         justify-content: space-between;
@@ -223,8 +240,8 @@
         margin-left: 15px;
         position: relative;
         &__cate {
-            background: #0ca8c9;
-            color: #fff;
+            background: @main-color;
+            color: @white;
             padding: 9px 0;
             // padding: 11px 0;
             cursor: pointer;
@@ -242,11 +259,11 @@
             .cate-hover {
                 position: absolute;
                 width: 260px;
-                background: #fff;
+                background: @white;
                 opacity: 0;
                 visibility: hidden;
-                -webkit-box-shadow: 0 13px 32px rgba(51, 51, 51, 0.1);
-                box-shadow: 0 13px 32px rgba(51, 51, 51, 0.1);
+                -webkit-box-shadow: 0 13px 32px @grey-text;
+                box-shadow: 0 13px 32px @grey-text;
                 -webkit-transition: all 0.3s;
                 -o-transition: all 0.3s;
                 transition: all 0.3s;
@@ -255,19 +272,16 @@
                     a {
                         .text-value (15px, 45px, 400, 0);
                         display: block;
-                        color: #000000;
+                        color: @black;
                         padding: 4px 30px 5px 40px;
                         -webkit-transition: all 0.3s;
                         -o-transition: all 0.3s;
                         transition: all 0.3s;
-                        border-bottom: solid 1px #ebebeb;
+                        border-bottom: solid 1px @grey-white;
                     }
                 }
-                li.active a {
-                    color: #0ca8c9;
-                }
                 li a:hover {
-                    color: #0ca8c9;
+                    color: @main-color;
                 }
                 
             }
@@ -286,7 +300,7 @@
                 display: inline-block;
                 a {
                     .text-value (14px, 24px, 600, 0);
-                    color: #fff;
+                    color: @white;
                     text-transform: uppercase;
                     padding: 15.5px 29px 14.5px;
                 }
@@ -294,8 +308,8 @@
             li:last-child {
                 a { padding: 15.5px 16px 14.5px 28px; }
             }
-            li:hover>a {
-                background: #bababa;
+            li:hover a {
+                background: @grey-text;
             }
         }
     }

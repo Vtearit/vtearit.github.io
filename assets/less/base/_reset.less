@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+html,
+body {
+	max-width: 1920px;
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	margin: 0 auto;
+    padding: 0;
+    border: 0;
+}
+
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	margin: 0;
+}
+
 .container {
     max-width: 1170px;
     width: 100%;
@@ -11,6 +31,16 @@
     margin: 0 -15px;
 }
 
+input:focus, select:focus, button:focus, textarea:focus {
+	outline: none;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	outline: none;
+
+}
+
 ul {
     padding: 0;
     li{
@@ -19,7 +49,36 @@ ul {
     }
 }
 
-.text-center { text-align: center; }
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+    .text-value(70px, 91px, 500, 0.25px);
+}
+
+h2 {
+    .text-value (60px, 60px, 600, -1px);
+}
+
+h3 {
+    .text-value (42px, 42px, 600, 0.7px);
+}
+
+h4 {
+    .text-value (30px, 30px, 600, 0.3px);
+	text-transform: uppercase;
+}
+
+h5 {
+    .text-value (18px, 18px, 600, 0);
+}
+
+h6 {
+    .text-value (17px, 30px, 500, 0.15px);
+}
 
 a:-webkit-any-link {
     color: -webkit-link;
@@ -30,20 +89,15 @@ a:-webkit-any-link {
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-    border-radius: 10px;
 }
   
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: @grey-white;
 }
   
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: @main-color;
-    background: radial-gradient(circle, @main-color 41%, #0eb5d6ea 97%, #8f8f8f 100%);
-    border-radius: 10px;
-    &:hover {
-      border-radius: 10px;
-    }
+    background: radial-gradient(circle, @main-color 41%, @grey-white 97%, @grey-white 100%);
 }

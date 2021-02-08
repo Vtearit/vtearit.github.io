@@ -1,43 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 // Color Argument
 
 @main-color: #0ca8c9;
-@bgcolor: #000;
+@black: #000;
+@white: #fff;
+@grey-white-bg: #f5f5f5;
+@grey-white: #ebebeb;
+@grey-text: #bababa;
+@grey-black : #8f8f8f;
+@top-bg : #222;
+@footer-bg: #f2f2f2;
+@slider-btn: #082b4f;
 
-@text-color: #525252;
-@number : #999999;
-@hr : #ededed;
 
 
-
-html,
-body {
-	max-width: 1920px;
-	height: 100%;
-	font-family: "Poppins", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	margin: 0 auto;
-    padding: 0;
-    border: 0;
-}
-
-* {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	margin: 0;
-}
-
-input:focus, select:focus, button:focus, textarea:focus {
-	outline: none;
-}
-
-a:hover, a:focus {
-	text-decoration: none;
-	outline: none;
-
-}
 .text-value (@_font-size : @font-size, @_line-height : @line-height, @_font-weight : @font-weight, @_letter-spacing : @letter-spacing) {
     font-size: @_font-size;
     line-height: @_line-height;
@@ -45,6 +21,7 @@ a:hover, a:focus {
     letter-spacing: @_letter-spacing;	    	
 
 }
+
 .slider-action (@_value : @value)
 {
     -webkit-transition: @_value;
@@ -52,18 +29,52 @@ a:hover, a:focus {
     transition: @_value;
 }
 
-ul,
-ol {
-	padding: 0;
-	margin: 0;
+.hover-action (@_transform)
+{
+    transform: scale(@_transform);
+    transition: all 0.5s;
 }
 
-h4 {
-    .text-value (30px, 30px, 600, 0.3px);
-	text-transform: uppercase;
+.text-center { text-align: center; }
+.text-upper { text-transform: uppercase; }
+
+// Rotate Animation
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes xoayvong{
+    from{
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    to{
+        -webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+    }
+}
+/* Standard syntax */ 
+@keyframes xoayvong {
+    from{
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    to{
+        -webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+    }
 }
 
-h5 {
-    .text-value (17px, 30px, 500, 0.15px);
+@keyframes zoom_in {
+    0%{transform: scale(0.5);opacity: 0}
+    // 50%{transform: scale(0.85);opacity: 0.5;}
+    100%{transform: scale(1);opacity:1}
 }
 
+// Zoom Animation
+@keyframes zoom_out {
+    0%{transform: scale(1.05);opacity: 0}
+    // 50%{transform: scale(1.05);}
+    100%{transform: scale(1);opacity:1}
+}

@@ -19,8 +19,10 @@
 				.inner-caption {
 					width: 70%;
 					&__big-text {
-						font-size: 60px;
-						line-height: 60px;
+						h2 {
+							font-size: 60px;
+							line-height: 60px;
+						}
 					}
 					&__small-text {
 						font-size: 13px;
@@ -38,16 +40,37 @@
 		img { width: 98%; }
 	}
 
-	.ts-section{
-		.ts__items{
-			.row {
-				justify-content: center;
+	.ts{
+		&__items{
+			&__inner {
+				.row {
+					justify-content: center;
+				}
+				.item{
+					width: 35%;
+				}
 			}
-			.item{
-				width: 35%;
-			}
-		} 
+		}
     }
+	// .news-section {
+	// 	.inner-news {
+	// 		.news-main {
+	// 			.item {
+	// 				&__image {
+	// 					img { width: 100%; }
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.brand-logo {
+		.inner-brand {
+			&__item {
+				img { width: 100%; }
+			}
+		}
+	}
 }
 
 @media only screen and (max-width: 991px) {
@@ -56,9 +79,6 @@
 	}
 
 	.header-logo .inner-hl__right {
-		.input-group button {
-			top: 99px;
-		}
 		.input-group input {
 			padding: 0 100px 0 160px;
 		}
@@ -74,8 +94,10 @@
 				.inner-caption {
 					width: 80%;
 					&__big-text {
-						font-size: 50px;
-						line-height: 50px;
+						h2 {
+							font-size: 50px;
+							line-height: 50px;
+						}
 					}
 					&__small-text {
 						font-size: 12px;
@@ -107,14 +129,15 @@
 		}
 	}
 
-	.ts-section{
-        .ts__items{
-            .item{
-                width: 40%;
-            }
-        }
+	.ts {
+		&__items {
+			&__inner {
+				.item {
+					width: 40%;
+				}
+			}
+		}
     }
-
 }
 
 
@@ -124,11 +147,6 @@
 	.header-logo .inner-hl {
 		flex-direction: column;
 		align-items: center;
-		&__right {
-			.input-group button {
-				top: 152px;
-			}
-		}
 	}
 
 	.header-nav .inner-hv {
@@ -163,9 +181,6 @@
 				input {
 					padding: 0px 45px 0 160px;
 				}
-				button {
-					top: 152px;
-				}
 			}
 		}
 	}
@@ -188,8 +203,10 @@
     				top: 20.75%;
 					.inner-caption {
 						&__big-text {
-							font-size: 35px;
-							line-height: 35px;
+							h2 {
+								font-size: 35px;
+								line-height: 35px;
+							}
 						}
 						&__small-text {
 							.btn-shop {
@@ -256,37 +273,60 @@
 		}
 	}
 
-	.ts-section{
-		.ts__head {
-			.inner-ts__head {
+	.ts {
+		&__head {
+			padding: 5% 0 2.5%;
+			&__inner {
 				&__title {
 					width: 80%;
 					span { display: none; }
 				}
+				&__button {
+					padding-top: 20px;
+					i {
+						padding: 0 5px;
+					}
+				}
 			}
 		}
 
-		.ts__items {
-            .item {
-                width: 50%;
-				padding: 10px 15px 10px;
-				&-inner {
-					.item {
-						&__image {
-							height: 215px;
-							img { 
-								width: 70%;
-								height: auto;
+		&__items {
+			&__inner {
+				.item {
+					width: 50%;
+					padding: 10px 15px 10px;
+					&-inner {
+						.item {
+							&__image {
+								height: 215px;
+								img { 
+									width: 70%;
+									height: auto;
+								}
 							}
-						}
-						&__text {
-							font-size: 13px;
+							&__text {
+								font-size: 13px;
+							}
 						}
 					}
 				}
-            }
-        }
+			}
+		}
     }
+
+	.news-section {
+		.inner-news {
+			.news-main {
+				.item {
+					border: 1px solid @grey-white; 
+					padding: 0 5px;
+				}
+			}
+			&__news-title .bg-text {
+				font-size: 80px;
+			}
+		}
+	}
 }
 
 /* Small Device: 320px */
@@ -302,10 +342,10 @@
 					&::after { display: none;}
 				}
 				input {
-					padding: 0 50px 0 130px;
+					padding: 0 50px 0 105px;
 				}
 				button {
-					top: 152px;
+					height: 87%;
 				}
 			}
 			.nav-right {
@@ -361,14 +401,31 @@
 	}
 
 	.slider {
-		border-top: 1px solid #0ca8c9;
-		border-bottom: 1px solid #0ca8c9;
-		box-shadow: 0 0 20px #0ca8c9;
+		border-top: 1px solid @main-color;
+		border-bottom: 1px solid @main-color;
 		 .inner-slider {
 			&__item {
 				.caption {
-					padding-left: 7%;
+					padding-left: 0;
+					position: absolute;
+    				top: 7%;
 					.inner-caption {
+						width: 100%;
+						display: flex;
+						justify-content: center;
+						&__big-text {
+							display: flex;
+							flex-direction: row;
+							h2 {
+								font-size: 19px;
+							}
+							.first-line {
+								display: flex;
+							}
+							.special-text {
+								margin-left: 0;
+							}
+						}
 						&__small-text {
 							display: none;
 						}
@@ -378,8 +435,9 @@
 		}
 
 	}
+
 	.fact-section {
-		padding: 5% 0;
+		padding: 8% 0 4%;
 		.inner-fact {
 			flex-wrap: nowrap;
 			flex-direction: row;
@@ -400,11 +458,132 @@
 		left: 10%;
 	}
 
-	.ts-section{
-        .ts__items{
-            .item{
-                width: 100%;
-            }
-        }
+	.ts {
+		&__head {
+			padding: 15% 0 15%;
+			&__inner {
+				&__title {
+					width: 100%;
+				}
+				&__button {
+					display: none;
+				}
+			}
+		}
+
+		&__items {
+			&__inner {
+				.item {
+					padding: 0 15px;
+					width: 100%;
+					&-inner {
+						.item {
+							&__image {
+								height: 200px;
+								img {
+									width: 50%;
+								}
+							}
+							&__text {
+								padding: 0 15%;
+							}
+						}
+					}
+				}
+			}
+		}
     }
+
+	.news-section {
+		.inner-news {
+			.news-main { 
+				.item {
+					width: 100%;
+					&__text {
+						text-align: center;
+						padding: 2% 0 6%;
+						&__date {
+							font-size: 13px;
+							line-height: 13px;
+						}
+					}
+				}
+			}
+			&__news-title .bg-text {
+				display: none;
+			}
+		}
+	}
+
+	.newsletter-section {
+		.inner-newsletter {
+			&__form {
+				input {
+					width: 100%;
+					font-size: 12px;
+				}
+				button {
+					font-size: 12px;
+					line-height: 12px;
+					right: 2%;
+					width: 20%;
+				}
+			}
+		}
+	}
+
+	.brand-logo {
+		.inner-brand {
+			flex-wrap: wrap;
+			&__item {
+				width: 33.3333%;
+			}
+			&__item:first-child {
+				width: 50%;
+				padding: 0 2% 0 18%;
+			}
+			&__item:nth-child(2) {
+				width: 50%;
+				padding: 0 18% 0 2%;
+			}
+		}
+	}
+	
+}
+
+@media only screen and (max-width: 320px) {
+	.header-logo .inner-hl {
+		&__right {
+			flex-direction: column;
+			.input-group {
+				select {
+					display: none;
+				}
+				input {
+					padding: 0 80px 0 15px;
+				}
+			}
+		}
+	}
+
+	
+
+	.slider {
+		.right-slide, .left-slide {
+			top: 30%;
+		}
+	}
+	.banner-section {
+		.inner-banner {
+			&__big--text {
+				top: 38%;
+				left: 1.5%;
+			}
+			&__small__item--text-1 {
+				top: 18%;
+			}
+		}
+	}
+
+	
 }
