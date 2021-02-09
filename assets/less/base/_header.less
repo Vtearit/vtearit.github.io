@@ -95,7 +95,6 @@
                     max-width: 142px;
                     width: 100%;
                     top: 50px !important;
-                    // right: 10px;
                     ul {
                         width: 100%;
                         max-width: 142px;
@@ -129,6 +128,11 @@
     .inner-hl {
         display: flex;
         justify-content: space-between;
+        &__left:hover {
+            img {
+                .hover-action(1.02);
+            }
+        }
         &__right {
             display: flex;
             .input-group {
@@ -180,6 +184,9 @@
                     cursor: pointer;
                     i {
                         font-weight: 600;
+                    }
+                    &:hover {
+                        background-color: @main-color - #111;
                     }
                 }
             }

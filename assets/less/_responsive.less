@@ -19,7 +19,7 @@
 				.inner-caption {
 					width: 70%;
 					&__big-text {
-						h2 {
+						h1 {
 							font-size: 60px;
 							line-height: 60px;
 						}
@@ -94,7 +94,7 @@
 				.inner-caption {
 					width: 80%;
 					&__big-text {
-						h2 {
+						h1 {
 							font-size: 50px;
 							line-height: 50px;
 						}
@@ -167,7 +167,21 @@
 			}
 		}
 	}
-	
+
+	.footer {
+    	&-infor {
+        	&__inner {
+            	&__items {
+					&:first-child {
+                		width: 30.8888%;
+					}
+					&:last-child {
+						width: 19.1111%;
+					}
+				}
+			}
+		}
+	}
 }
 
 /* Large Device: 480px */
@@ -203,7 +217,7 @@
     				top: 20.75%;
 					.inner-caption {
 						&__big-text {
-							h2 {
+							h1 {
 								font-size: 35px;
 								line-height: 35px;
 							}
@@ -327,6 +341,38 @@
 			}
 		}
 	}
+	.footer {
+    	&-infor {
+        	&__inner {
+            	&__items {
+					width: 50%;
+					align-items: center;
+					&:first-child, &:last-child {
+						width: 50%;
+					}
+					ul {
+						.text-center;
+					}
+					&:first-child {
+						ul {
+							padding: 5.5% 0 3%;
+							li a {
+								flex-direction: column;
+								span {
+									padding: 0 20%;
+								}
+							}
+						}
+						.footer-social {
+							width: 100%;
+							justify-content: center;
+							margin-bottom: 10%;
+						}
+					}
+				} 
+			}
+		}
+	}
 }
 
 /* Small Device: 320px */
@@ -408,7 +454,7 @@
 				.caption {
 					padding-left: 0;
 					position: absolute;
-    				top: 7%;
+    				top: 75%;
 					.inner-caption {
 						width: 100%;
 						display: flex;
@@ -416,7 +462,7 @@
 						&__big-text {
 							display: flex;
 							flex-direction: row;
-							h2 {
+							h1 {
 								font-size: 19px;
 							}
 							.first-line {
@@ -545,6 +591,32 @@
 			&__item:nth-child(2) {
 				width: 50%;
 				padding: 0 18% 0 2%;
+			}
+		}
+	}
+
+	.footer {
+		&-infor {
+			&__inner {
+				&__items:first-child {
+					ul {
+						li {
+							a {
+								span {
+									padding: 0 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&-copyright {
+			&__inner {
+				flex-direction: column-reverse;
+				&__text {
+					font-size: 11px;
+				}
 			}
 		}
 	}

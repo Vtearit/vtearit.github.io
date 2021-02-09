@@ -69,7 +69,6 @@ h3 {
 
 h4 {
     .text-value (30px, 30px, 600, 0.3px);
-	text-transform: uppercase;
 }
 
 h5 {
@@ -100,4 +99,28 @@ a:-webkit-any-link {
 ::-webkit-scrollbar-thumb {
     background: @main-color;
     background: radial-gradient(circle, @main-color 41%, @grey-white 97%, @grey-white 100%);
+}
+
+/* Preloader Action */
+#preloder {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background: @black;
+}
+
+.loader {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -13px;
+	margin-left: -13px;
+	border-radius: 60px;
+	animation: loader 0.8s linear infinite;
+	-webkit-animation: loader 0.8s linear infinite;
 }
