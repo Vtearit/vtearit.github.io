@@ -37,3 +37,17 @@
 - Responsive all media devices
 
 ```
+
+### Update 10/02/2021:
+
+```sh
+
+- Coding Standard 
+
+- Comment Codes
+
+- Optimal Codes
+
+```
+
+#

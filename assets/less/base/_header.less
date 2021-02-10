@@ -1,20 +1,26 @@
-// Header Top Secion
+/* ------------------------------ Header Styles ---------------------------- */
+
+/* Header Top Secion */
 .flag-text {
-    .text-value (12px, 13px, 500, 0);
+    .text-value(12px, 13px, 500, 0);
     height: 12px;
     color: @grey-text;
 }
+
 .header-top {
-    background-color:@top-bg;
+    background-color: @top-bg;
     padding: 20px 0 18px 0;
     .inner-ht {
         display: flex;
         justify-content: space-between;
-        // Basic Infor Section
-        ul.inner-ht__infor {
+
+        /* Basic Infor Section */
+        .inner-ht__infor {
             display: flex;
             justify-content: flex-start;
-            a { margin-right: 12px; }
+            a { 
+                margin-right: 12px; 
+            }
             li {
                 display: flex;
                 ul {
@@ -33,26 +39,32 @@
                             color: @main-color;
                         }
                     }
+
                     .text {
                         display: flex;
                         flex-direction: column;
                         padding: 0 10px;
                         span {
-                            .text-value (12px, 16px, 500, 0);
+                            .text-value(12px, 16px, 500, 0);
                             display: block;
                             color: @grey-text;
                         }
+
                         span:last-child {
                             color: @white;
                         }
                     }
+
                     &:hover {
-                        .icon { .hover-action(1.1); }
+                        .icon {
+                            .hover-action(1.1);
+                        }
                     }
                 }
             }
         }
-        // Language Selector Section
+
+        /* Language Selector Section */
         &__lan-selector {
             cursor: pointer;
             display: inline-block;
@@ -71,6 +83,7 @@
                         img {
                             padding-right: 5px;
                         }
+
                         span {
                             position: relative;
                             top: -2px;
@@ -79,6 +92,7 @@
                             color: @grey-text;
                         }
                     }
+
                     .ddArrow:before {
                         content: "3";
                         font-family: "ElegantIcons";
@@ -90,6 +104,7 @@
                         line-height: 26px;
                     }
                 }
+
                 .ddChild {
                     background: @top-bg + #111;
                     max-width: 142px;
@@ -113,6 +128,7 @@
                     }
                 }
             }
+
             span {
                 .flag-text;
             }
@@ -121,7 +137,7 @@
 }
 
 
-// Header Logo Secion
+/* Header Logo Secion */
 .header-logo {
     background-color: @white;
     padding: 26px 0 15px;
@@ -133,13 +149,14 @@
                 .hover-action(1.02);
             }
         }
+
         &__right {
             display: flex;
             .input-group {
                 padding: 3px 0px;
                 position: relative;
                 .category-select {
-                    .text-value (12px, 24px, 600, 0.41px);
+                    .text-value(12px, 24px, 600, 0.41px);
                     background: transparent;
                     z-index: 99;
                     border: none;
@@ -153,6 +170,7 @@
                         background: @grey-text;
                         content: "";
                     }
+
                     &:after {
                         position: absolute;
                         content: "3";
@@ -161,8 +179,9 @@
                         color: @grey-black;
                     }
                 }
+
                 input {
-                    .text-value (12px, 24px, 600, 0.41px);
+                    .text-value(12px, 24px, 600, 0.41px);
                     padding: 0 215px 0 175px;
                     height: 40px;
                     border-radius: 20px;
@@ -170,6 +189,7 @@
                     border: 1px solid @grey-white;
                     color: @grey-black;
                 }
+
                 button {
                     font-size: 16px;
                     top: 6%;
@@ -182,14 +202,17 @@
                     background-color: @main-color;
                     padding: 8px 25px 8px 17px;
                     cursor: pointer;
+
                     i {
                         font-weight: 600;
                     }
+
                     &:hover {
                         background-color: @main-color - #111;
                     }
                 }
             }
+
             .nav-right {
                 display: flex;
                 padding-left: 10px;
@@ -202,6 +225,7 @@
                             color: @main-color;
                             text-align: center;
                         }
+
                         .size {
                             position: relative;
                             width: 16px;
@@ -220,14 +244,13 @@
                         }
                     }
                 }
+
                 li:first-child:hover {
-                    i{
-                        animation: xoayvong 0.5s linear 0s infinite;
-                        -webkit-animation: xoayvong 0.5s linear 0s infinite;
-                        -moz-animation: xoayvong 0.5s linear 0s infinite;
-                        -o-animation: xoayvong 0.5s linear 0s infinite;
+                    i {
+                      .itemRotate(0.5s);
                     }
                 }
+
                 li:last-child:hover {
                     .hover-action(1.1);
                 }
@@ -236,8 +259,7 @@
     }
 }
 
-// Header Navbar Section
-
+/* Header Navbar Section */
 .header-nav {
 	background: @main-color;
     .inner-hv {
@@ -250,19 +272,20 @@
             background: @main-color;
             color: @white;
             padding: 9px 0;
-            // padding: 11px 0;
             cursor: pointer;
             img { 
                 padding-right: 12px;
                 position: relative;
                 top: 5px;
             }
+
             span {
-                .text-value (14px, 29px, 600, 0);
-                color: #fff;
+                .text-value(14px, 29px, 600, 0);
+                color: @white;
                 position: relative;
                 top: -1px;
             }
+
             .cate-hover {
                 position: absolute;
                 width: 260px;
@@ -277,7 +300,7 @@
                 li {
                     list-style: none;
                     a {
-                        .text-value (15px, 45px, 400, 0);
+                        .text-value(15px, 45px, 400, 0);
                         display: block;
                         color: @black;
                         padding: 4px 30px 5px 40px;
@@ -287,18 +310,20 @@
                         border-bottom: solid 1px @grey-white;
                     }
                 }
+
                 li a:hover {
                     color: @main-color;
                 }
-                
             }
         }
+        
         &__cate:hover .cate-hover {
             margin-top: 11px;
             opacity: 1;
             visibility: visible;
             z-index: 99;
         }
+
         &__menu {
             display: inline-flex;
             padding: 12px 0;
@@ -308,19 +333,23 @@
                 a {
                     .text-value (14px, 24px, 600, 0);
                     color: @white;
-                    text-transform: uppercase;
                     padding: 15.5px 29px 14.5px;
-                }
+                } 
+
+                &:last-child {
+                    a { 
+                        padding: 15.5px 16px 14.5px 28px; 
+                    }
+                }   
             }
-            li:last-child {
-                a { padding: 15.5px 16px 14.5px 28px; }
-            }
+
             li:hover a {
                 background: @grey-text;
             }
         }
     }
 }
+
 .slicknav_menu {
 	display: none;
 }

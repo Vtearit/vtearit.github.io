@@ -1,6 +1,6 @@
+/* ------------------------------ Library Styles ---------------------------- */
 
-// Color Argument
-
+/* Color Argument */
 @main-color: #0ca8c9;
 @black: #000;
 @white: #fff;
@@ -11,9 +11,10 @@
 @top-bg : #222;
 @footer-bg: #f2f2f2;
 @slider-btn: #082b4f;
+@preloader-color1: #f44336;
+@preloader-color2: #673ab7;
 
-
-
+/* Mixins */
 .text-value (@_font-size : @font-size, @_line-height : @line-height, @_font-weight : @font-weight, @_letter-spacing : @letter-spacing) {
     font-size: @_font-size;
     line-height: @_line-height;
@@ -36,87 +37,113 @@
 }
 
 .text-center { text-align: center; }
+
 .text-upper { text-transform: uppercase; }
 
-// Page Preloader Animation
+/* Page Preloader Properties */
+.loader-properties (@_webkit-transform : @webkit-transform, @_transform : @transform, @_border : @border, @_border-left-color : @border-left-color) {
+    -webkit-transform: rotate(@_webkit-transform);
+    transform: rotate(@_transform);
+    border: 4px solid @_border;
+    border-left-color: @_border-left-color;
+}
+
+/* Preloader Action */
+@border-left-color: transparent;
+
 @keyframes loader {
 	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
+        .loader-properties(0deg, 0deg, @preloader-color1);
 	}
 	50% {
-		-webkit-transform: rotate(180deg);
-		transform: rotate(180deg);
-		border: 4px solid #673ab7;
-		border-left-color: transparent;
+        .loader-properties(180deg, 180deg, @preloader-color2);
 	}
 	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
+
+        .loader-properties(360deg, 360deg, @preloader-color1);
 	}
 }
 
 @-webkit-keyframes loader {
 	0% {
-		-webkit-transform: rotate(0deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
+        .loader-properties(0deg, 0deg, @preloader-color1);
 	}
 	50% {
-		-webkit-transform: rotate(180deg);
-		border: 4px solid #673ab7;
-		border-left-color: transparent;
+        .loader-properties(180deg, 180deg, @preloader-color2);
 	}
 	100% {
-		-webkit-transform: rotate(360deg);
-		border: 4px solid #f44336;
-		border-left-color: transparent;
+        .loader-properties(360deg, 360deg, @preloader-color1);
 	}
 }
 
-// Rotate Animation
-/* Chrome, Safari, Opera */ 
-@-webkit-keyframes xoayvong{
-    from{
-        -webkit-transform:rotate(0deg);
-        -moz-transform:rotate(0deg);
-        -o-transform:rotate(0deg);
-    }
-    to{
-        -webkit-transform:rotate(360deg);
-        -moz-transform:rotate(360deg);
-        -o-transform:rotate(360deg);
-    }
+#preloder {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background: @black;
 }
-/* Standard syntax */ 
-@keyframes xoayvong {
+
+.loader {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -13px;
+	margin-left: -13px;
+	border-radius: 60px;
+	animation: loader 0.8s linear infinite;
+	-webkit-animation: loader 0.8s linear infinite;
+}
+
+/* Rotate Properties */
+.rotate-properties (@_value : @value)
+{
+    -webkit-transform: rotate(@_value);
+    -moz-transform: rotate(@_value);
+    -o-transform: rotate(@_value);
+}
+
+/* Rotate Animation */
+
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes itemRotate {
     from{
-        -webkit-transform:rotate(0deg);
-        -moz-transform:rotate(0deg);
-        -o-transform:rotate(0deg);
+        .rotate-properties(0deg);
     }
     to{
-        -webkit-transform:rotate(360deg);
-        -moz-transform:rotate(360deg);
-        -o-transform:rotate(360deg);
+        .rotate-properties(360deg);
     }
 }
 
+/* Standard syntax */ 
+@keyframes itemRotate {
+    from{
+        .rotate-properties(0deg);
+    }
+    to{
+        .rotate-properties(360deg);
+    }
+}
+
+.itemRotate(@_time : @time) {
+    animation: itemRotate @_time linear 0s infinite;
+    -webkit-animation: itemRotate @_time linear 0s infinite;
+    -moz-animation: itemRotate @_time linear 0s infinite;
+    -o-animation: itemRotate @_time linear 0s infinite;
+}
+
+/* Zoom Animation */
 @keyframes zoom_in {
     0%{transform: scale(0.5);opacity: 0}
-    // 50%{transform: scale(0.85);opacity: 0.5;}
     100%{transform: scale(1);opacity:1}
 }
 
-// Zoom Animation
 @keyframes zoom_out {
     0%{transform: scale(1.05);opacity: 0}
-    // 50%{transform: scale(1.05);}
     100%{transform: scale(1);opacity:1}
 }
-
-// 
+ 
