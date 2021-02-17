@@ -50,4 +50,16 @@
 
 ```
 
+### Update 17/02/2021:
+
+```sh
+
+- Edit Banner, News and Brand: Add "a" tag
+
+- Edit newsletter input section max width 768px media
+
+- Edit footer lineheight text
+
+```
+
 #

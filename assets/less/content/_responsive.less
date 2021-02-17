@@ -335,8 +335,11 @@
 			}
 
 			&__small {
-				&__item .bsf-img {
-					margin-bottom: 1.5%;
+				&__item {
+					width: 100%;
+					.bsf-img {
+						margin-bottom: 1.5%;
+					}
 				}
 			}
 		}
@@ -388,13 +391,35 @@
 		.inner-news {
 			.news-main {
 				.item {
-					border: 1px solid @grey-white; 
-					padding: 0 5px;
+					border: 1px solid @grey-white;
+					&-inner {
+						&__text__title {
+							line-height: 16px;
+						}
+					}
 				}
 			}
 
 			&__news-title .bg-text {
 				font-size: 80px;
+			}
+		}
+	}
+
+	.newsletter-section {
+		.inner-newsletter {
+			&__form {
+				input {
+					border-radius: 0;
+					height: 50px;
+				}
+
+				button {
+					height: 50px;
+					right: 16%;
+					border-radius: 0;
+					padding: 10px 0;
+				}
 			}
 		}
 	}
@@ -411,15 +436,23 @@
 
 					ul {
 						.text-center;
+						padding: 3% 0;
+						li {
+							a {
+								.text-value(14px, 14px, 500, -0.4px);
+							}
+						}
 					}
 
 					&:first-child {
 						ul {
-							padding: 5.5% 0 3%;
+							padding: 0 0 2%;
 							li a {
 								flex-direction: column;
 								span {
 									padding: 0 20%;
+									font-size: 14px;
+    								line-height: 14px;
 								}
 							}
 						}
@@ -428,6 +461,12 @@
 							width: 100%;
 							justify-content: center;
 							margin-bottom: 10%;
+						}
+					}
+
+					&:last-child {
+						ul {
+							padding: 3% 0;
 						}
 					}
 				} 
@@ -634,12 +673,14 @@
 			.news-main { 
 				.item {
 					width: 100%;
-					&__text {
-						text-align: center;
-						padding: 2% 0 6%;
-						&__date {
-							font-size: 13px;
-							line-height: 13px;
+					&-inner {
+						&__text {
+							text-align: center;
+							padding: 2% 0 6%;
+							&__date {
+								font-size: 13px;
+								line-height: 13px;
+							}
 						}
 					}
 				}
@@ -664,7 +705,7 @@
 				button {
 					font-size: 12px;
 					line-height: 12px;
-					right: 2%;
+					right: 0;
 					width: 20%;
 				}
 			}

@@ -159,6 +159,7 @@
         position: relative;
         overflow: hidden;
         cursor: pointer;
+        display: block;
         img {
             transition: all 0.5s;
             overflow: hidden;
@@ -210,7 +211,7 @@
                 padding: 17px 0 2px;
             }
 
-            h5 {
+            h6 {
                 color: @grey-black;
                 span {
                     color: @main-color;
@@ -253,6 +254,7 @@
                 z-index: 1;
 				span {
                     .text-value (24px, 0, 500, 0.2px);
+                    color: @black;
                 }
 
 				h2 {
@@ -261,7 +263,7 @@
                     top: -3px;
                 }
 
-				h5 {
+				h6 {
 					letter-spacing: 0.35px;
                     color: @grey-black;
 				}
@@ -274,9 +276,10 @@
                 z-index: 1;
                 h4 {
                     padding-bottom: 2px;
+                    color: @black;
                 }
 
-				h5 {
+				h6 {
                     color: @grey-black;
 					span {
 						color: @main-color
@@ -290,7 +293,7 @@
                 }
 
                 div {
-                    .hover-action(1.03);
+                    .hover-action(1.02);
                 }
             }
         }
@@ -414,7 +417,7 @@
                 color: @grey-white;
             }
 
-            span.main-text {
+            .main-text {
                 .text-value(42px, 42px, 600, 0.5px);
                 color: @black;
                 position: relative;
@@ -425,50 +428,52 @@
             display: flex;
             justify-content: space-between;
             position: relative;
-            padding-bottom: 7.16%;
+            padding-bottom: 7.04%;
             flex-wrap: wrap;
-            .item{
-                display: flex;
-                flex-direction: column;
+            .item {
+                display: block;
                 padding: 0 15px;
                 width: 33.3333%;
-                cursor: pointer;
-                &__image {
-                    overflow: hidden;
-                    img {
-                        width: 100%;
-                    }
-
-                    &:hover {
+                &-inner {
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    &__image {
+                        overflow: hidden;
                         img {
-                            .hover-action(1.01);
+                            width: 100%;
+                        }
+    
+                        &:hover {
+                            img {
+                                .hover-action(1.01);
+                            }
                         }
                     }
-                }
-                
-                &__text {
-                    padding: 4.8% 0;
-                    &__title {
-                        .text-value(16px, 24px, 600, 0.3px);
-                        color: @black;
-                    }
-
-                    &__date {
-                        .text-value(13px, 13px, 500, -0.3px);
-                        display: block;
-                        color: @grey-text;
-                        padding-top: 3.5%;
-                        a {
-                            color: @main-color;
-                            &:hover {
-                                color: @main-color - #111;
-                                font-weight: bold;
+                    
+                    &__text {
+                        padding: 4.8% 0;
+                        &__title {
+                            .text-value(16px, 24px, 600, 0.3px);
+                            color: @black;
+                        }
+    
+                        &__date {
+                            .text-value(13px, 13px, 500, -0.3px);
+                            display: block;
+                            color: @grey-text;
+                            padding-top: 4%;
+                            span {
+                                color: @main-color;
+                                &:hover {
+                                    color: @main-color - #111;
+                                    font-weight: bold;
+                                }
                             }
                         }
                     }
                 }
             }
-            
         }
     }
 }
@@ -553,6 +558,7 @@
 		&__item {
 			width: 20%;
             padding: 0 15px;
+            display: block;
             cursor: pointer;
             &:hover {
                 img {
