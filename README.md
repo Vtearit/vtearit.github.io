@@ -62,4 +62,13 @@
 
 ```
 
+### Update 25/02/2021:
+
+```sh
+
+- Edit webkit, menu responsive, newsletter-title line height, footer
+- Remove Slick-nav js library
+
+```
+
 #

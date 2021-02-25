@@ -9,14 +9,6 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
-    });
-
-    /*------------------
         Slider
     --------------------*/
     var slides=document.querySelector('.inner-slider').children;

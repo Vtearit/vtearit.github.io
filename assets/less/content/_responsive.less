@@ -495,87 +495,120 @@
 @media only screen and (max-width: 479px) {
 	/* Header Media */
 	.header {
-		&-logo .inner-hl {
-			&__right {
-				.flex-direction-column;
-				.input-group {
-					select {
-						padding: 12px 0 12px 5px;
-						&::after { 
-							display: none;
+		&-logo {
+			padding: 26px 0 0;;
+			.inner-hl {
+				&__right {
+					.flex-direction-column;
+					.input-group {
+						select {
+							padding: 12px 0 12px 5px;
+							&::after { 
+								display: none;
+							}
+						}
+	
+						input {
+							padding: 0 50px 0 105px;
+						}
+	
+						button {
+							height: 87%;
 						}
 					}
-
-					input {
-						padding: 0 50px 0 105px;
+	
+					.nav-right {
+						.jc-center;
 					}
-
-					button {
-						height: 87%;
-					}
-				}
-
-				.nav-right {
-					margin-left: 25%;
-					.jc-center;
 				}
 			}
 		}
-
+		
 		&-nav { 
 			background: @white; 
 			.inner-hv { 
-				display: block; 
-				width: 90%; 
-				&__menu { 
-					display: none; 
-				} 
-			} 
-		}
-	}
+				display: block;
+				&__cate {
+					background-color: @main-color;
+					width: 50%;
+					margin: 0 25%;
+					display: block;
+					position: absolute;
+					border: 1px solid;
+					text-align: center;
+					margin-top: 2px;
+					img {
+						display: none;
+					}
 
-	.mobile-menu-wrap {
-		cursor: pointer;
-		.slicknav { 
-			&_menu { 
-				display: block; 
-				background: transparent; 
-				text-align: center;
-				margin-top: -80px;
-				padding: 12px 0;
-				&txt {
-					color: @white;
-				}
-			}
+					span {
+						line-height: 20px;
+					}
 
-			&_btn { 
-				margin-right: 25%;
-			}
-			
-			&_nav {
-				background: @main-color;
-				margin-top: 12px;
-				margin-left: 10%;
-				li { 
-					border-bottom: dotted 1px @grey-white;
-					padding: 5px 0; 
-				}
-
-				a {
-					color: @white;
 					&:hover {
-						color: @top-bg
+						background-color: @grey-text;
+						span {
+							color: @top-bg;
+						}
+					}
+
+					.cate-hover {
+						width: 100%;
+						top: 78%;
+						li {
+							a {
+								line-height: 20px;
+								padding: 5px 0;
+							}
+						}
 					}
 				}
-			}
 
-			&_btn {
-				border-radius: 0;
-				background-color: @main-color;
-				display: inline-block;
-				color: @white;
-				padding: 5px 10px;
-			}
+				&__menu { 
+					background-color: @main-color;
+					width: 100%;
+					li {
+						width: 100%;
+						padding: 0 5%;
+						cursor: pointer;
+						&:not(:first-child) {
+							display: none;
+						}
+
+						a {
+							padding: 0 5%;
+						}
+
+						&:hover {
+							background-color: @grey-text;
+							a {
+								color: @top-bg;
+							}
+						}
+					}
+
+					.nav-icon {
+						display: block;
+						position: absolute;
+						right: 10%;
+						color: @white;
+						font-size: 18px;
+						&:hover {
+							color: @top-bg;
+						}
+					}
+				}
+
+				&__menu.responsive {
+					position: relative;
+					.flex-display;
+					.flex-direction-column;
+					li {
+						display: block;
+						text-align: left;
+					}
+				}
+			} 
 		}
 	}
 

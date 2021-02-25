@@ -134,7 +134,7 @@
                 <div class="row">
                     <div class="inner-hv">
                         <!--Navbar select in dropdown-list-->
-                        <div class="inner-hv__cate">
+                        <div class="inner-hv__cate" id="myCatenav">
                             <img src="assets/images/header/cate.png" alt="">
                             <span class="text-upper">CATEGORIES</span>
                             <ul class="cate-hover">
@@ -149,15 +149,14 @@
                             </ul>
                         </div>
                         <!--Menu-->
-                        <div class="mobile-menu-wrap"></div>
-                        <!-- <div id="mobile-menu-wrap"></div> -->
-                        <ul class="inner-hv__menu mobile-menu text-upper">
+                        <ul class="inner-hv__menu" id="myTopnav">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">Page</a></li>
                             <li><a href="#">Contact</a></li>
+                            <a href="javascript:void(0);" class="nav-icon" onclick="nav_menu()">&#9776;</a>
                         </ul>
                     </div>
                 </div>
@@ -794,10 +793,21 @@
 
     <!-- Js Plugins -->
     <script src="assets/js/jquery-3.3.1.js"></script>
-    <script src="assets/js/jquery.slicknav.js"></script>
     <script src="assets/js/jquery.dd.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/less.js"></script>
+
+    <!-- Navigation Js -->>
+    <script type="text/javascript">
+        function nav_menu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "inner-hv__menu") {
+                x.className += " responsive";
+            } else {
+                x.className = "inner-hv__menu";
+            }
+        }
+    </script>
 
 </body>
 

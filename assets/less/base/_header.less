@@ -328,6 +328,8 @@
             display: -webkit-inline-box;
             display: -ms-inline-flexbox;
             display: inline-flex;
+            overflow: hidden;
+            text-transform: uppercase;
             padding: 12px 0;
             li {
                 list-style: none;
@@ -342,16 +344,16 @@
                     a { 
                         padding: 15.5px 16px 14.5px 28px; 
                     }
-                }   
+                }
+
+                &:hover a {
+                    background: @grey-text;
+                }
             }
 
-            li:hover a {
-                background: @grey-text;
+            .nav-icon {
+                display: none;
             }
         }
     }
-}
-
-.slicknav_menu {
-	display: none;
 }
