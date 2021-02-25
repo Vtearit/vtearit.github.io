@@ -40,7 +40,7 @@
 		&__items {
 			&__inner {
 				.row {
-					justify-content: center;
+					.jc-center;
 				}
 
 				.item {
@@ -165,14 +165,16 @@
 	.header {
 		&-logo {
 		.inner-hl {
-			flex-direction: column;
+			.flex-direction-column;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
 			align-items: center;
 			}
 		}
 
 		&-nav {
 			.inner-hv {
-				justify-content: center;
+				.jc-center;
 				&__cate {
 					display: none;
 				}
@@ -183,7 +185,9 @@
 	.fact-section {
 		padding: 3% 0 0;
 		.inner-fact {
+			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
+			-ms-flex-pack: distribute;
 			justify-content: space-around;
 			&__item {
 				width: 40%;
@@ -214,7 +218,9 @@
 	.header {
 		&-logo {
 			.inner-hl {
-				flex-direction: column;
+				.flex-direction-column;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
 				align-items: center;
 				&__right {
 					.input-group {
@@ -228,7 +234,7 @@
 
 		&-nav {
 			.inner-hv {
-				justify-content: center;
+				.jc-center;
 				margin-left: 0;
 				&__cate {
 					display: none;
@@ -263,6 +269,8 @@
 								border: none;
 								&:hover {
 									border: none;
+									-webkit-transform: none;
+									-ms-transform: none;
 									transform: none;
 								}
 							}
@@ -315,7 +323,9 @@
 	.fact-section {
 		padding: 3% 0 0;
 		.inner-fact {
+			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
+			-ms-flex-pack: distribute;
 			justify-content: space-around;
 			&__item {
 				width: 46%;
@@ -329,7 +339,7 @@
 
 	.banner-section {
 		.inner-banner {
-			flex-direction: column;
+			.flex-direction-column;
 			img {
 				width: 100%;
 			}
@@ -421,6 +431,9 @@
 					padding: 10px 0;
 				}
 			}
+			&__text--big {
+				line-height: 44px;
+			}		
 		}
 	}
 
@@ -429,6 +442,8 @@
         	&__inner {
             	&__items {
 					width: 50%;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
 					align-items: center;
 					&:first-child, &:last-child {
 						width: 50%;
@@ -448,7 +463,7 @@
 						ul {
 							padding: 0 0 2%;
 							li a {
-								flex-direction: column;
+								.flex-direction-column;
 								span {
 									padding: 0 20%;
 									font-size: 14px;
@@ -459,7 +474,7 @@
 
 						.footer-social {
 							width: 100%;
-							justify-content: center;
+							.jc-center;
 							margin-bottom: 10%;
 						}
 					}
@@ -482,7 +497,7 @@
 	.header {
 		&-logo .inner-hl {
 			&__right {
-				flex-direction: column;
+				.flex-direction-column;
 				.input-group {
 					select {
 						padding: 12px 0 12px 5px;
@@ -502,7 +517,7 @@
 
 				.nav-right {
 					margin-left: 25%;
-					justify-content: center;
+					.jc-center;
 				}
 			}
 		}
@@ -519,7 +534,7 @@
 		}
 	}
 
-	#mobile-menu-wrap {
+	.mobile-menu-wrap {
 		cursor: pointer;
 		.slicknav { 
 			&_menu { 
@@ -575,17 +590,17 @@
     				top: 75%;
 					.inner-caption {
 						width: 100%;
-						display: flex;
-						justify-content: center;
+						.flex-display;
+						.jc-center;
 						&__big-text {
-							display: flex;
-							flex-direction: row;
+							.flex-display;
+							.flex-direction-row;
 							h1 {
 								font-size: 19px;
 							}
 
 							.first-line {
-								display: flex;
+								.flex-display;
 							}
 
 							.special-text {
@@ -605,11 +620,12 @@
 	.fact-section {
 		padding: 8% 0 4%;
 		.inner-fact {
+			-ms-flex-wrap: nowrap;
 			flex-wrap: nowrap;
-			flex-direction: row;
+			.flex-direction-row;
 			&__item {
 				width: 25%;
-				justify-content: center;
+				.jc-center;
 				&--icon {
 					padding-right: 0;
 				}
@@ -714,6 +730,7 @@
 
 	.brand-logo {
 		.inner-brand {
+			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
 			&__item {
 				width: 33.3333%;
@@ -734,15 +751,39 @@
 	.footer {
 		&-infor {
 			&__inner {
-				&__items:first-child {
+				&__items {
+					width: 100%;
+					padding-bottom: 3%;
+					-webkit-box-align: start;
+					-ms-flex-align: start;
+					align-items: flex-start;
 					ul {
-						li {
-							a {
-								span {
-									padding: 0 0;
+						text-align: unset;
+					}
+					&:first-child {
+						width: 100%;
+						ul {
+							padding: 3% 0 2%;
+							li {
+								a {
+									.flex-direction-row;
+									i {
+										padding-right: 3%;
+									}
+									span {
+										padding: 0 0;
+									}
 								}
 							}
 						}
+						.footer-social {
+							.jc-start;
+							padding-bottom: 0;
+						}
+					}
+
+					&:last-child {
+						width: 100%;
 					}
 				}
 			}
@@ -750,6 +791,9 @@
 
 		&-copyright {
 			&__inner {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: reverse;
+				-ms-flex-direction: column-reverse;	
 				flex-direction: column-reverse;
 				&__text {
 					font-size: 11px;
@@ -765,7 +809,7 @@
 	.header-logo {
 		.inner-hl {
 			&__right {
-				flex-direction: column;
+				.flex-direction-column;
 				.input-group {
 					select {
 						display: none;

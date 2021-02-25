@@ -6,14 +6,15 @@
     &-infor {
         padding: 3% 0 1.8%;
         &__inner {
-            display: flex;
-            justify-content: space-between;
+            .flex-display;
+            .jc-space-between;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             width: 100%;
             &__items:first-child {
                 width: 33.3333%;
-                display: flex;
-                flex-direction: column;
+                .flex-display;
+                .flex-direction-column;
                 h5 {
                     margin-left: -1px;
                 }
@@ -22,7 +23,7 @@
                     li {
                         padding: 1.4% 0;
                         a {
-                            display: flex;
+                            .flex-display;
                             i {
                                 .text-value(16px, 20px, 100, 1px);
                                 color: @main-color;
@@ -56,7 +57,7 @@
                 }
 
                 .footer-social {
-                    display: flex;
+                    .flex-display;
                     font-size: 13px;
                     a {
                         color: @grey-black;
@@ -71,8 +72,8 @@
 
             &__items {
                 width: 25%;
-                display: flex;
-                flex-direction: column;
+                .flex-display;
+                .flex-direction-column;
                 padding: 0 15px;
                 h5 {
                     .text-value(18px, 18px, 600, 0.4px);
@@ -107,8 +108,8 @@
 		background-color: @white;
         padding: 1.05% 0;
         &__inner {
-            display: flex;
-            justify-content: space-between;
+            .flex-display;
+            .jc-space-between;
             align-items: center;
             &__text {
                 .text-value(12px, 12px, 500, 0.1px);

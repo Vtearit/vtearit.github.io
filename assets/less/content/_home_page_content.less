@@ -6,7 +6,7 @@
 	position: relative;
 	overflow: hidden;
     .right-slide, .left-slide {
-        display: flex;
+        .flex-display;
         position: absolute;
         top: 46%;
         cursor: pointer;
@@ -59,12 +59,13 @@
                 position: absolute;
                 top: 28.75%;
                 width: 100%;
+                -webkit-animation: zoom_in 0.5s ease;
                 animation: zoom_in 0.5s ease;
                 .inner-caption {
                     width: 60%;
                     &__big-text {
-                        display: flex;
-                        flex-direction: column;
+                        .flex-display;
+                        .flex-direction-column;
                         .special-text {
                             margin-left: 0.5%;
                             letter-spacing: 1px;
@@ -108,6 +109,7 @@
         &__item img {
             max-width: 100%;
             display: block;
+            -webkit-animation: zoom_out 1s ease;
             animation: zoom_out 1s ease;
         }
     }
@@ -117,10 +119,10 @@
 .fact-section {
     padding: 3% 0;
     .inner-fact {
-        display: flex;
-        justify-content: space-between;
+        .flex-display;
+        .jc-space-between;
         &__item {
-            display: flex;
+            .flex-display;
             width: 23%;
             position: relative;
             &--icon {
@@ -128,8 +130,8 @@
             }
 
             &--text {
-                display: flex;
-                flex-direction: column;
+                .flex-display;
+                .flex-direction-column;
                 span {
                     .text-value(16px, 24px, 600, 0);
                     color: @black;
@@ -144,6 +146,8 @@
             &:hover {
                 img {
                     .hover-action(1.2);
+                    -webkit-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
                     transform: rotate(360deg);
                 }
             }
@@ -153,30 +157,34 @@
 
 /* Banner Section */
 .banner-section .inner-banner {
-    display: flex;
-    justify-content: space-between;
+    .flex-display;
+    .jc-space-between;
     &__big {
         position: relative;
         overflow: hidden;
         cursor: pointer;
         display: block;
         img {
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
             transition: all 0.5s;
             overflow: hidden;
             &:hover {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
                 transform: scale(1.1);
             }
         }
 
         &--text {
-            display: flex;
-            flex-direction: column;
+            .flex-display;
+            .flex-direction-column;
             top: 62.6%;
             left: 24.8%;
             position: absolute;
             .countdown-timer {
                 text-align: center;
-                display: flex;
+                .flex-display;
                 padding: 0 9%;
                 padding-bottom: 9px;
                 .cd-item {
@@ -231,12 +239,14 @@
     }
 
     &__small {
-		display: flex;
-		flex-direction: column;
+		.flex-display;
+		.flex-direction-column;
         overflow: hidden;
         cursor: pointer;
         &__item {
-            display: flex;
+            .flex-display;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
             justify-content: flex-end;
             position: relative;
 			.bsf-img {
@@ -305,8 +315,8 @@
     &__head {
         padding: 2% 0 2.5%;
         &__inner {
-            display: flex;
-            justify-content: space-between;
+            .flex-display;
+            .jc-space-between;
             &__title {
                 position: relative;
                 h3 {
@@ -344,13 +354,18 @@
             .item {
                 width: 25%;
                 padding: 0 15px 3.04%;
+                -webkit-box-sizing: border-box;
                 box-sizing: border-box;
                 &-inner{
                     .item {
                         &__image{
                             overflow: hidden;
+                            -webkit-box-pack: center;
+                            -ms-flex-pack: center;
                             justify-content: center;
-                            display: flex;
+                            .flex-display;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
                             align-items: center;
                             height: 263px;
                         }
@@ -390,6 +405,7 @@
     }
 
     &__items__inner {
+        -webkit-animation: zoom_out 1s ease;
         animation: zoom_out 1s ease;
     }
 }
@@ -407,8 +423,12 @@
 
     .inner-news {
         &__news-title {
-            display: flex;
+            .flex-display;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             padding: 9.4% 0 6.1%;
             .bg-text {
@@ -425,18 +445,19 @@
         }
 
         .news-main {
-            display: flex;
-            justify-content: space-between;
+            .flex-display;
+            .jc-space-between;
             position: relative;
             padding-bottom: 7.04%;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             .item {
                 display: block;
                 padding: 0 15px;
                 width: 33.3333%;
                 &-inner {
-                    display: flex;
-                    flex-direction: column;
+                    .flex-display;
+                    .flex-direction-column;
                     cursor: pointer;
                     &__image {
                         overflow: hidden;
@@ -538,6 +559,8 @@
 				width: 14.5%;
                 padding: 17px 0;
                 top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
                 right: 17%;
                 cursor: pointer;
@@ -554,7 +577,7 @@
 	background: @white;
 	padding: 3% 0 2.6%;
 	.inner-brand {
-        display: flex;
+        .flex-display;
 		&__item {
 			width: 20%;
             padding: 0 15px;
