@@ -571,8 +571,12 @@
 						width: 100%;
 						padding: 0 5%;
 						cursor: pointer;
-						&:not(:first-child) {
+						&:not(:first-child, :last-child) {
 							display: none;
+						}
+
+						&:last-child:hover {
+							background-color: transparent;
 						}
 
 						a {
@@ -584,6 +588,10 @@
 							a {
 								color: @top-bg;
 							}
+
+							.nav-icon {
+								background-color: transparent;
+							}
 						}
 					}
 
@@ -591,6 +599,7 @@
 						display: block;
 						position: absolute;
 						right: 10%;
+						top: 0;
 						color: @white;
 						font-size: 18px;
 						&:hover {
